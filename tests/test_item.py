@@ -20,3 +20,10 @@ def test_discount(item_test):
     item_test.apply_discount()
     assert item_test.price == 8000.0
 
+
+def test_string_to_number(item_test):
+    """Тестирование преобразования строки в число."""
+    assert item_test.string_to_number('5') == 5
+    assert item_test.string_to_number('5.0') == 5
+    assert item_test.string_to_number('5.5') == 5
+
