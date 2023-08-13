@@ -16,7 +16,7 @@ class Item:
         :param quantity: Количество товара в магазине.
         """
         self.__name = name
-        self.price = price
+        self.price = int(str(price).replace('_', ''))
         self.quantity = quantity
         self.all.append(self)
 
@@ -25,6 +25,11 @@ class Item:
 
     def __str__(self) -> str:
         return f'{self.__name}'
+
+    def __add__(self, other):
+        if not isinstance(other, Item):
+            raise ValueError('Складывать можно только объекты Item или Phone и дочерние от них.')
+        return self.quantity + other.quantity
 
     @property
     def name(self):
