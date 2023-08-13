@@ -7,6 +7,16 @@ def item_test():
     return Item("Смартфон", 10000, 20)
 
 
+def test_repr(item_test):
+    """ Тестирование магического метода repr """
+    assert repr(item_test) == "Item('Смартфон', 10000, 20)"
+
+
+def test_str(item_test):
+    """ Тестирование магического метода str """
+    assert str(item_test) == 'Смартфон'
+
+
 def test_price(item_test):
     """Когда мы создаем экземпляр класса со значениями ("Смартфон", 10000, 20),
         то calculate_total_price вернет 200000."""
