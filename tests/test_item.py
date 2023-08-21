@@ -37,3 +37,11 @@ def test_string_to_number(item_test):
     assert item_test.string_to_number('5.0') == 5
     assert item_test.string_to_number('5.5') == 5
 
+
+@pytest.fixture
+def items():
+    return Item.instantiate_from_csv()
+
+
+def test_instantiate_from_csv(items):
+    assert len(items) == 5
